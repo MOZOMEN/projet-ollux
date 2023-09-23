@@ -16,7 +16,15 @@ use App\Http\Controllers\LocalizationController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+
+Route::get('/welcome', function () {
+    return view("welcome");
+});
+
+Route::get('/page', function () {
+    return view("page");
 });
 
 
@@ -34,13 +42,21 @@ Route::get('/vision', function () {
 Route::get('/service', function () {
     return view('service');
 });
+Route::get('/projet', function () {
+    return view('projet');
+});
+Route::get('/motdir', function () {
+    return view('motdir');
+});
+Route::get('/impactplus', function () {
+    return view('impactplus');
+});
 Route::get('/impact', function () {
     return view('impact');
 });
 Route::get('/contact', function () {
     return view('contact');
 });
-Route::get('/contact', 'FormulaireController@index');
-Route::post('/contact', 'FormulaireController@submit');
+
 
 

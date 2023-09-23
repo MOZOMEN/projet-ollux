@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ollux Energies-Contact</title>
+    <link rel="icon"  href="{{ asset('assets/logo.png') }}">
     <style>
         .ligne1{
             background-size: cover;
@@ -23,8 +24,8 @@
 <body>
     @extends("welcome")
     @section("content")
-    <div class="row ligne1 w-100 p-0 img-fluid border-bottom border-5 border-dark" style="background-image: url('{{ asset('assets/img6.jpg') }}'); height:100vh">
-        <h1 class="titre fw-bolder text-white text-center">Contacts</h1>
+    <div class="row ligne1 img-fluid border-bottom border-5 border-dark" style="background-image: url('{{ asset('assets/img6.jpg') }}'); height:570px">
+        <h1 class="titre fw-bolder text-white text-center">CONTACTS</h1>
     </div>
 
     <div class="row">
@@ -59,7 +60,7 @@
                 @enderror
             </div>
 
-            <select class="form-select mt-4">
+            <select class="form-select mt-4" name="country">
                 <option selected>{{__("message.ct35")}}</option>
                 <option value="NULL">Not Specified</option>
                 <option value="AF">Afghanistan</option>
@@ -305,7 +306,7 @@
 
             <div class="form-group mt-3">
                 <label for="sujet" class="fw-bold">{{__("message.ct37")}}</label>
-                <input id="sujet" type="text" class="form-control @error('sujet') is-invalid @enderror" name="sujet" value="{{ old('sujet') }}"  autocomplete="sujet" autofocus>
+                <input id="sujet" type="text" class="form-control @error('sujet') is-invalid @enderror" name="sujet" value="{{ old('sujet') }}"  autocomplete="sujet">
                 @error('sujet')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -315,7 +316,7 @@
 
             <div class="form-group mt-3">
                 <label for="message" class="fw-bold">{{__("message.ct38")}}</label>
-                <textarea id="message" class="form-control @error('message') is-invalid @enderror" name="message" value="{{ old('message') }}" autocomplete="message" rows="7" autofocus> </textarea>
+                <textarea id="message" class="form-control @error('message') is-invalid @enderror" name="message" value="{{ old('message') }}" autocomplete="message" rows="7"> </textarea>
                 @error('message')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -325,8 +326,8 @@
 
             <div class="form-group">
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="is_admin" name="role" value="on">
-                    <label class="form-check-label" for="role">{{__("message.ct39")}}</label> <br> <br>
+                    <input type="checkbox" class="form-check-input" id="accepter" name="accepter" value="on">
+                    <label class="form-check-label" for="accepter">{{__("message.ct39")}}</label> <br> <br>
                 </div>
             </div>
 
